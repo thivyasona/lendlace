@@ -16,6 +16,9 @@ main/WebContent/uploads/
 *.env
 main/smtp-capture.txt
 
+# One-off rotation tool contains real passwords - local only
+main/test-tools/RotateDemoPasswords.java
+
 # Local test scripts that contain real demo passwords
 /test-*.ps1
 /chk.ps1
