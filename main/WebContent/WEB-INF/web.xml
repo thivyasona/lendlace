@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>LendLace</display-name>
+
+    <!-- Tracks live sessions so a suspended customer can be logged out by the admin -->
+    <listener>
+        <listener-class>com.lendlace.util.SessionRegistry</listener-class>
+    </listener>
+
+    <!-- 30 minute server-side session timeout -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <!-- Server-side role enforcement for every protected page/servlet.
+         This works even if a JSP's inline check is edited out later. -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.lendlace.util.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/admin-dashboard.jsp</url-pattern>
+        <url-pattern>/owner-dashboard.jsp</url-pattern>
+        <url-pattern>/customer-dashboard.jsp</url-pattern>
+        <url-pattern>/add-dress.jsp</url-pattern>
+        <url-pattern>/edit-dress.jsp</url-pattern>
+        <url-pattern>/manage-dresses.jsp</url-pattern>
+        <url-pattern>/owner-bookings.jsp</url-pattern>
+        <url-pattern>/owner-profile.jsp</url-pattern>
+        <url-pattern>/earnings.jsp</url-pattern>
+        <url-pattern>/reviews.jsp</url-pattern>
+        <url-pattern>/my-bookings.jsp</url-pattern>
+        <url-pattern>/my-reviews.jsp</url-pattern>
+        <url-pattern>/wishlist.jsp</url-pattern>
+        <url-pattern>/profile.jsp</url-pattern>
+        <url-pattern>/booking.jsp</url-pattern>
+        <url-pattern>/payment.jsp</url-pattern>
+        <url-pattern>/booking-success.jsp</url-pattern>
+        <url-pattern>/addDress</url-pattern>
+        <url-pattern>/updateDress</url-pattern>
+        <url-pattern>/deleteDress</url-pattern>
+        <url-pattern>/bookDress</url-pattern>
+        <url-pattern>/adminBooking</url-pattern>
+        <url-pattern>/ownerBooking</url-pattern>
+        <url-pattern>/wishlist</url-pattern>
+        <url-pattern>/review</url-pattern>
+        <url-pattern>/payment</url-pattern>
+        <url-pattern>/updateProfile</url-pattern>
+        <url-pattern>/changePassword</url-pattern>
+        <url-pattern>/changeEmail</url-pattern>
+        <url-pattern>/adminCredentialReset</url-pattern>
+        <url-pattern>/admin-accounts.jsp</url-pattern>
+        <url-pattern>/admin</url-pattern>
+        <url-pattern>/adminCustomer</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>

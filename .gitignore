@@ -1,0 +1,38 @@
+# Development-only secrets and local docs
+main/database/CREDENTIALS-DEV-ONLY.md
+PRIVATE_ACCOUNT_RECORD.md
+main/lend_lace_backup.sql
+*.local.md
+
+# Build output
+main/target/
+
+# Uploaded user content (server-managed)
+main/WebContent/uploads/
+
+# Local environment secrets — NEVER commit these
+.env
+.env.local
+*.env
+main/smtp-capture.txt
+
+# Local test scripts that contain real demo passwords
+/test-*.ps1
+/chk.ps1
+/redeploy*.ps1
+/redeploy*.log
+/redeploy*.err
+/tomcat-*.log
+/fin-*.txt
+/fx-*.txt
+/fix-*.txt
+/cj2.txt
+/prof.html
+/$null
+
+# Compiled classes
+*.class
+
+# Database backups with real user data
+main/database/*backup*.sql
+main/database/reset-admin-password.sql

@@ -1,0 +1,19 @@
+@echo off
+REM ============================================================
+REM DEPLOY TEMPLATE: Tomcat environment variables (Windows)
+REM Copy this file to: <tomcat-home>\bin\setenv.bat
+REM (create setenv.bat if it does not exist - Tomcat reads it at startup)
+REM Fill in your REAL values before copying. NEVER commit the real one.
+REM ============================================================
+
+REM --- Database ---
+set DB_URL=jdbc:mysql://YOUR_HOST:3306/lend_lace
+set DB_USER=your_db_user
+set DB_PASSWORD=your_db_password
+
+REM --- SMTP (Gmail requires an App Password, not your login password) ---
+set MAIL_SMTP_HOST=smtp.gmail.com
+set MAIL_SMTP_PORT=587
+set MAIL_SMTP_USER=yourmail@gmail.com
+set MAIL_SMTP_PASS=your_app_password
+set MAIL_FROM=yourmail@gmail.com

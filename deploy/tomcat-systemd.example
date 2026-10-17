@@ -1,0 +1,15 @@
+# ============================================================
+# DEPLOY TEMPLATE: Tomcat environment variables (Linux / systemd)
+# Copy into your Tomcat systemd unit under [Service] and run:
+#   sudo systemctl daemon-reload && sudo systemctl restart tomcat
+# Fill in REAL values. NEVER commit the real file.
+# ============================================================
+[Service]
+Environment="DB_URL=jdbc:mysql://YOUR_HOST:3306/lend_lace"
+Environment="DB_USER=your_db_user"
+Environment="DB_PASSWORD=your_db_password"
+Environment="MAIL_SMTP_HOST=smtp.gmail.com"
+Environment="MAIL_SMTP_PORT=587"
+Environment="MAIL_SMTP_USER=yourmail@gmail.com"
+Environment="MAIL_SMTP_PASS=your_app_password"
+Environment="MAIL_FROM=yourmail@gmail.com"

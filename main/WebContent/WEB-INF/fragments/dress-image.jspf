@@ -1,0 +1,10 @@
+<%@ page import="com.lendlace.model.Dress" %>
+<%
+// Returns a displayable image path for a dress.
+// Uses the dress's own uploaded image when present, otherwise a neutral
+// "Image unavailable" placeholder - never another dress's photo.
+String dressImage(String raw) {
+    if (raw == null || raw.trim().isEmpty()) return "assets/images/image-unavailable.jpg";
+    return raw;
+}
+%>
